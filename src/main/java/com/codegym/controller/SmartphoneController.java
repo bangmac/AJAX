@@ -69,6 +69,7 @@ public class SmartphoneController {
     @RequestMapping(value = "/edit/{id}",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
+            // mediaType chỉ nhận kiểu dữ liệu Json;
             // produces : xác định kiểu dữ liệu trả về (response)
             consumes = MediaType.APPLICATION_JSON_VALUE)
     // consumes : xác định kiểu dữ liệu gửi yêu cầu (request)
