@@ -3,7 +3,6 @@ package com.codegym.controller;
 import com.codegym.model.Smartphone;
 import com.codegym.service.SmartphoneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +28,7 @@ public class SmartphoneController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Smartphone createSmartphone(@RequestBody Smartphone smartphone) {
-        //@RequestBody Smartphone smartphone thực hiện gán dữ liệu từ json nhận được vào các trường tương ứng của smartphone
+        //@RequestBody Smartphone smartphone thực hiện gán dữ liệu từ json nhận được vào các git  tương ứng của smartphone
         return smartphoneService.save(smartphone);
     }
 
@@ -70,7 +69,9 @@ public class SmartphoneController {
     @RequestMapping(value = "/edit/{id}",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE,
+            // produces : xác định kiểu dữ liệu trả về (response)
             consumes = MediaType.APPLICATION_JSON_VALUE)
+    // consumes : xác định kiểu dữ liệu gửi yêu cầu (request)
     @ResponseBody
     public Smartphone editSmartphone(@PathVariable int id, @RequestBody Smartphone smartphone) {
         smartphone.setId(id);
