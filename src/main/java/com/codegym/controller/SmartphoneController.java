@@ -23,14 +23,20 @@ public class SmartphoneController {
         return mav;
     }
 
-    @RequestMapping(value = "/createnewPhone", method = RequestMethod.POST,
-            produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/createnewPhone",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Smartphone createSmartphone(@RequestBody Smartphone smartphone) {
+        //@RequestBody Smartphone smartphone thực hiện gán dữ liệu từ json nhận được vào các trường tương ứng của smartphone
         return smartphoneService.save(smartphone);
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Iterable<Smartphone> allPhones(){
         return smartphoneService.findAll();
@@ -44,7 +50,10 @@ public class SmartphoneController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/delete/{id}",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Smartphone deleteSmartphone(@PathVariable Integer id){
         return smartphoneService.remove(id);
@@ -58,7 +67,10 @@ public class SmartphoneController {
         return mav;
     }
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/edit/{id}",
+            method = RequestMethod.POST,
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Smartphone editSmartphone(@PathVariable int id, @RequestBody Smartphone smartphone) {
         smartphone.setId(id);

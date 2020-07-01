@@ -7,10 +7,13 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#newSmartphoneForm').submit(function(event) {
+                //$('#newSmartphoneForm').submit(function(event) là funtion được gọi khi submit from có id là newSmartphoneForm
                 var producer = $('#producer').val();
                 var model = $('#model').val();
                 var price = $('#price').val();
+                // thực hiện lấy dữ liệu từ các input tương ứng (producer, model, price)
                 var json = { "producer" : producer, "model" : model, "price": price};
+                // gán các biến vào các trường tương ứng của đối tượng json
                 $.ajax({
                     headers: {
                         'Accept': 'application/json',
@@ -19,6 +22,7 @@
                     type : "POST",
                     data: JSON.stringify(json),
                     url: "/smartphones/createnewPhone",
+                    // thực hiện truyền json theo đường dẫn "/smartphones/createnewPhone"
                     success: function(smartphone) {
                         var respContent = "";
                         respContent += "<span class='success'>Smartphone was created: [";
