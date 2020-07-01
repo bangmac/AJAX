@@ -21,6 +21,7 @@
                     },
                     type : "POST",
                     data: JSON.stringify(json),
+                    // json chứa data:{<danh sách tham số gửi đến server (producer, model, price)>}
                     url: "/smartphones/createnewPhone",
                     // thực hiện truyền json theo đường dẫn "/smartphones/createnewPhone"
                     success: function(smartphone) {
