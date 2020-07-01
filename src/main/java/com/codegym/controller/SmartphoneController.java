@@ -28,7 +28,7 @@ public class SmartphoneController {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Smartphone createSmartphone(@RequestBody Smartphone smartphone) {
-        //@RequestBody Smartphone smartphone thực hiện gán dữ liệu từ json nhận được vào các git  tương ứng của smartphone
+        //@RequestBody Smartphone smartphone thực hiện gán dữ liệu từ json nhận được vào các trường tương ứng của smartphone
         return smartphoneService.save(smartphone);
     }
 
