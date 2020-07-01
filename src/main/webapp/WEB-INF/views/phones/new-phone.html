@@ -18,13 +18,16 @@
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
+                        // khai báo để sever biết đang gửi kiểu dữ liệu json, nếu ko sever sẽ
+                        // hiểu kiểu dữ liệu đc gửi lên là một form hoặc một định dạng nào đó
                     },
                     type : "POST",
-                    data: JSON.stringify(json),
+                    data: JSON.stringify(json), // chuyển object thanh string
                     // json chứa data:{<danh sách tham số gửi đến server (producer, model, price)>}
                     url: "/smartphones/createnewPhone",
                     // thực hiện truyền json theo đường dẫn "/smartphones/createnewPhone"
                     success: function(smartphone) {
+                        // ajax gửi 1 đối tượng json lên sever, sever trả về kq thành công và hàm success sẽ thực thi
                         var respContent = "";
                         respContent += "<span class='success'>Smartphone was created: [";
                         respContent += smartphone.producer + " : ";
